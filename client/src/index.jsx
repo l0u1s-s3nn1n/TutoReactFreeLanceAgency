@@ -8,7 +8,7 @@ import Freelances from './pages/Freelances'
 import Header from './components/Header'
 import Error from './components/Error'
 import { createGlobalStyle } from 'styled-components'
-
+import { ThemeProvider, SurveyProvider } from './utils/context'
 const GlobalStyle = createGlobalStyle`
     * {
       font-family: 'Trebuchet MS', Helvetica, sans-serif;
@@ -21,6 +21,8 @@ const GlobalStyle = createGlobalStyle`
 ReactDOM.render(
   <React.StrictMode>
     <Router>
+    <ThemeProvider />
+    <SurveyProvider />
       <GlobalStyle />
       <Header />
         <Routes>

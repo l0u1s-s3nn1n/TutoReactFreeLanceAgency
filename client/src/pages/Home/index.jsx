@@ -55,5 +55,5 @@ function Home() {
     </HomeWrapper>
   )
 }
-
 export default Home
+
