@@ -7,18 +7,29 @@ import Results from './pages/Results'
 import Freelances from './pages/Freelances'
 import Header from './components/Header'
 import Error from './components/Error'
+import { createGlobalStyle } from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
+    * {
+      font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    }
+    body {
+      margin: 0;
+    }
+`
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
+      <GlobalStyle />
       <Header />
-      <Routes>
+        <Routes>
           <Route exact path="/" element={<Home/>}/>
           <Route exact path="/survey/:questionNumber" element={<Survey/>}/>
           <Route exact path="/results" element={<Results/>}/>
           <Route path="/freelances" element={<Freelances/>}/>
           <Route path="*" element={<Error/>}/>
-      </Routes>
+        </Routes>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')
